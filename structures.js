@@ -1,14 +1,19 @@
+
+// List object
 function LinkedList(){
 this.head = null;
 this.tail = null;
 }
 
+
+//Node object
 function Node(value, next, prev){
   this.value = value;
   this.next = next;
   this.prev = prev;
 }
 
+// Add to head
 LinkedList.prototype.addToHead = function(value) {
   var newNode = new Node(value, this.head, null);
   if(this.head) this.head.prev = newNode;
@@ -16,6 +21,7 @@ LinkedList.prototype.addToHead = function(value) {
   this.head = newNode;
 };
 
+//Remove head
 LinkedList.prototype.removeHead = function(){
   if(!this.head) return null;
   var val = this.head.value;
@@ -25,6 +31,7 @@ LinkedList.prototype.removeHead = function(){
   return val;
 };
 
+// Add tail
 LinkedList.prototype.addToTail = function(value) {
   var newNode = new Node(value, null, this.tail);
   if(this.tail) this.tail.next = newNode;
@@ -32,6 +39,7 @@ LinkedList.prototype.addToTail = function(value) {
   this.tail = newNode;
 };
 
+//Remove tail
 LinkedList.prototype.removeTail = function(value){
   if(!this.tail) return null;
   var val = this.tail.value;
@@ -41,7 +49,7 @@ LinkedList.prototype.removeTail = function(value){
   return val;
 };
 
-
+//Search
 LinkedList.prototype.search = function(searchValue){
   var currentNode = this.head;
   while(currentNode){
@@ -53,6 +61,7 @@ LinkedList.prototype.search = function(searchValue){
   return null;
 };
 
+//Index Of
 LinkedList.prototype.indexOf = function(searchValue){
 
 var currentNode = this.head;
@@ -70,6 +79,7 @@ var indexs = [];
 
 };
 
+//Initialize LL
 var ll = new LinkedList();
 
 ll.addToTail(10);
